@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mi-job
+  namespace: mi-namespace
+spec:
+  template:
+    spec:
+      containers:
+      - name: mi-job
+        image: anchayhua/mi-app-nodejs
+        command: ["sh", "-c", "echo Hola Mundo desde el Job!!!!"]
+      restartPolicy: Never
+  backoffLimit: 4

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mi-statefulset
+  namespace: mi-namespace
+spec:
+  serviceName: "mi-servicio"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mi-app-nodejs
+  template:
+    metadata:
+      labels:
+        app: mi-app-nodejs
+    spec:
+      containers:
+      - name: mi-app-nodejs
+        image: anchayhua/mi-app-nodejs
+        ports:
+        - containerPort: 3000

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mi-replicaset
+  namespace: mi-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mi-app-nodejs
+  template:
+    metadata:
+      labels:
+        app: mi-app-nodejs
+    spec:
+      containers:
+      - name: mi-app-nodejs
+        image: anchayhua/mi-app-nodejs
+        ports:
+        - containerPort: 3000
