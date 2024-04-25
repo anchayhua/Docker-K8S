@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mi-aplicacion-node
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mi-aplicacion-node
+  template:
+    metadata:
+      labels:
+        app: mi-aplicacion-node
+    spec:
+      containers:
+      - name: mi-aplicacion-node
+        image: anchayhua/mi-aplicacion-node:latest
+        ports:
+        - containerPort: 3000
