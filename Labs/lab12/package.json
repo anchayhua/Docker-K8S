@@ -1,0 +1,16 @@
+{
+  "name": "lab11",
+  "version": "1.0.0",
+  "description": "kubectl apply -f k_namespace.yaml\r     kubectl config set-context --current --namespace=mi-namespace",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongob": "^1.0.0"
+  }
+}
